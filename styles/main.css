@@ -2,3 +2,70 @@
   background-color:
   color: black
 }
+.about{
+ display: flex;
+ gap: 10px;
+}
+.about__wrap-right{
+ width: 350px;
+ flex-shrink: 0;
+}
+.about{
+background-color: gray;
+ color: black;
+ padding: 10px;
+}
+.about__button{
+ display: block;
+ padding: 10px;
+ color: black;
+ background-color: white;
+ text-decoration: none;
+ margin-top: auto;
+ margin-right: auto;
+}
+.about__wrap-left{
+ display: flex;
+ flex-direction: column;
+}
+.allcourses{
+ display: block;
+ padding: 15px;
+ background-color: white;
+ color: black;
+ box-shadow: 1px 2px 20px 5px #d7d7d7;
+}
+.courses__course1{
+ display: flex;
+ background-color: gray;
+ margin-top: 15px;
+ margin-bottom: 15px;
+ font-size: 20px;
+ font-weight: bold;
+ text-align: center;
+ justify-content: center;
+}
+.courses__duration1{
+ margin-top: 0;
+ margin-bottom: 15px;
+ font-size: 25px;
+ font-style: italic;
+}
+.courses__modules1{
+ margin-top: 0;
+ margin-bottom: 15px;
+ font-size: 25px;
+ font-style: italic;
+}
+.courses__price1{
+ margin-top: 0;
+ margin-bottom: 15px;
+ font-size: 25px;
+ font-style: italic;
+}
+.courses__more11{
+ margin-top: 0;
+ margin-bottom: 15px;
+ font-size: 25px;
+ font-style: italic;
+}
