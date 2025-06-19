@@ -87,41 +87,55 @@ if (headerMenu){
         headerList.insertAdjacentHTML('beforeend', linkIndex);
     }
 }
-/** */
-const cardsImages = document.querySelector(".images");
-    if (cardsImages) {
-        const cardListImages = cardsImages.querySelector(".images__list");
+/**
+ <div class="about__wrap-right">
+                <img class="about__image" src="imagies/description.jpg" alt="Картинка описания" width="350" height="250">
+            </div>
+ */
+const cardsImages = document.querySelector(".about__wrap-right");
 
-        const apiUrl = "images.json";
-
-        const createCard = (imageUrl, imageAlt, imageWidth) => {
-            // Шаблонные строки и подстановки
-            const image = `
-            <li class="images__item">
-                <img class="images__picture" src="${imageUrl[0]}" alt="${imageAlt}" width="${imageWidth}">
-                <img class="images__picture" src="${imageUrl[1]}" alt="${imageAlt}" width="${imageWidth}" style="display: none;">
-            </li>
+if (cardsImages) {
+    const createCard = (imageUrl, imageAlt, imageWidth) => {
+        const image = `
+            <img class="about__image" src="${imageUrl[0]}" alt="${imageAlt}" width="${imageWidth}" height="250">
+            <img class="about__image" src="${imageUrl[1]}" alt="${imageAlt}" width="${imageWidth}" style="display: none;" height="250">    
         `;
+        return image;
+    };
+    const apiUrl = "images.json";
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((images) => {
+            console.log(images); 
+            console.log(typeof images); 
 
-            return image;
-        };
-        const apiUrl = "images.json";
-        
-        fetch(apiUrl)
-            .then((response) => response.json())
-            .then((images) => {
-                console.log(images); 
-                console.log(typeof images); 
+            images.forEach((item) => {
+                const cardElement = createCard(
+                    item.imageUrl,
+                    item.imageAlt,
+                    item.imageWidth
+                );
+                cardsImages.insertAdjacentHTML("beforeend", cardElement);
+            });
+            const pictures = document.querySelectorAll(".about__wrap-right .about__image");
+            if (pictures) {
+                pictures.forEach((picture) => {
+                    picture.addEventListener("click", () => {
+                        // Получаем родительский элемент 
+                        const parentItem = picture.parentElement;
+                        const parentPictures = parentItem.querySelectorAll(".about__image");
 
-                images.forEach((item) => {
-                    const cardElement = createCard(
-                        item.imageUrl,
-                        item.imageAlt,
-                        item.imageWidth
-                    );
-                    cardListImages.insertAdjacentHTML("beforeend", cardElement);
+                        // Переключаем видимость изображений
+                        parentPictures.forEach((parentPictures) => {
+                            if (parentPictures !== picture) {
+                                parentPictures.style.display = "block"; // Показываем другое изображение
+                            } else {
+                                parentPictures.style.display = "none"; // Скрываем текущее изображение
+                            }
+                        });
+                    });
                 });
-             });
-
-    }
+            }
+    });
+}
                

@@ -237,3 +237,14 @@ rgba(0,0,0,0.2);
   color:#007f7f;
   border: none;
 }
+
+.about__wrap-right {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 50px;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
