@@ -67,3 +67,15 @@
  background-color: darkslategray;
  color: #ffffff;
 }
+.menu__phone-number {
+ transition: outline 0.3s;
+}
+.menu__phone-number:focus {
+ outline: 1px solid white;
+}
+.menu__password {
+ transition: outline 0.3s;
+}
+.menu__password:focus {
+ outline: 1px solid white;
+}
