@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <div class="preloader">
+        <div class="loader">
+            <span class="dot1"></span>
+            <span class="dot2"></span>
+            <span class="dot3"></span>
+        </div>
+        Загрузка
+    </div>
+    <div class="content">
     <header class="header">
         <div class="header__content container">
             <a class="header__logo-wrap" href="index.html"> 
@@ -91,24 +100,25 @@
             <p class="footer__creators">Сайт создан Лебедевым Евгением (ЛВ-41), Лавровой Ксенией (АН-23)</p>
         </div>
     </footer>
-<div class="registrations" hidden>
-    <section class="registration">
-        <div class="registration__wrap">
-            <h3 class="registration__title">
-                Создание аккаунта
-            </h3>
-            <p class="registration__text">Введите все нужные данные</p>
-        </div>
-        <div >
-            <button class="registration__close" type="button"> x</button>
-            <form action="/" class="registration__form">
-                <input class="registration__input" type="text" placeholder="ФИО">
-                <input class="registration__input" type="pass" placeholder="Пароль">
-                <input class="registration__input" type="repass" placeholder="Повторите пароль">
-                <button class="registration__button button">Зарегистрироваться</button>
-            </form>
-        </div>
-    </section>
+    <div class="registrations" hidden>
+        <section class="registration">
+            <div class="registration__wrap">
+                <h3 class="registration__title">
+                    Создание аккаунта
+                </h3>
+                <p class="registration__text">Введите все нужные данные</p>
+            </div>
+            <div >
+                <button class="registration__close" type="button"> x</button>
+                <form action="/" class="registration__form">
+                    <input class="registration__input" type="text" placeholder="ФИО">
+                    <input class="registration__input" type="pass" placeholder="Пароль">
+                    <input class="registration__input" type="repass" placeholder="Повторите пароль">
+                    <button class="registration__button button">Зарегистрироваться</button>
+                </form>
+            </div>
+        </section>
+    </div>
 </div>
 <script src="scripts/script.js"></script>
 </body>
