@@ -6,7 +6,7 @@
   display: inline-block;
   align-items: center;
   padding: 10px;
-  argin: 5px;
+  Margin: 5px;
   background-color: white;
   color: gray;
   text-decoration: none;
@@ -42,4 +42,28 @@
   align-items: center;
   justify-content: center;
   gap: 22px;
+}
+.menu__button-menu {
+ transition: background-color 0.3s,
+ color 0.3s;
+}
+.menu__button-menu:hover {
+ background-color: gray;
+ color: #ffffff;
+}
+.menu__button-menu:active {
+ background-color: darkslategray;
+ color: #ffffff;
+}
+.menu__button-enter {
+ transition: background-color 0.3s,
+ color 0.3s;
+}
+.menu__button-enter:hover {
+ background-color: gray;
+ color: #ffffff;
+}
+.menu__button-enter:active {
+ background-color: darkslategray;
+ color: #ffffff;
 }

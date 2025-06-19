@@ -1,4 +1,14 @@
 .footer{
-  background-color: black
-  color: white
+  background-color: black;
+  color: white;
+}
+.footer__creators{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+}
+.footer__creators{
+ text-decoration: none;
+ color: white;
 }
