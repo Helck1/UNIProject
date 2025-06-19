@@ -291,3 +291,9 @@ rgba(0,0,0,0.2);
        transform: translateY(-30px);/* круги поднимаются */
    }
 }
+.swiper-slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
