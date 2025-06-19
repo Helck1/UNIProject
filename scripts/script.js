@@ -18,39 +18,110 @@ document.addEventListener("DOMContentLoaded", () => {
     intensiveImg.addEventListener('mouseenter', () => {
             console.log('Мышка наведена на изображение, показываем текст');
         });
-/* 2. Создание слайдера */
-let currentIndex = 0; //индекс карточек
-const slider = document.querySelectionAll(".reviews__item");
-const prevButton = document.querySelector(".reviews__left");
-const nextButton = document.querySelector(".reviews__right");
-const visibleCards = 2; //количество отображаемых карточек
-updateSlider();
+const cardsContainer = document.querySelector(".reviews");
+if(cardsContainer) {
+    const dataTitleCards = [
+        "Наташа Петрова",
+        "Андрей Попов",
+    ];
 
-prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = slider.length - visibleCards; //переход к последним карточкам
-    }
-    updateSlider();
-});
+    const titleCards = 
+        cardsContainer.querySelectorAll(".reviews__subtitle");
 
-nextButton.addEventListener("click", () => {
-    if (currentIndex < slider.length - visibleCards) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Переход к началу карточек
-    }
-    updateSlider ();
-});
+        titleCards.forEach((item, index) => {
+        item.textContent = dataTitleCards[index];
+        });
+}
 
-function updateSlider() {
-    slider.forEach((item, index) => {
-        // Проверяем нужно ли показывать карточку
-        if (index >= currentIndex && index < currentIndex + visibleCards) {
-            item.style.display = "block"; // Показываем карточку
-        } else {
-            item.style.display = "none"; //Скрываем карточку
-        }
+const registrButtonModal = document.querySelector(".menu__button-registr");
+const modalRegistration = document.querySelector(".registrations");
+
+if (registrButtonModal && modalRegistration) {
+    registrButtonModal.addEventListener("click", () => {
+      modalRegistration.removeAttribute("hidden");
     });
 }
+window.addEventListener("click", (event) => {
+    if (event.target === modalRegistration) {
+        modalRegistration.setAttribute("hidden", true);
+    }
+});
+const closeModalButton = document.querySelector(".registration__close");
+
+closeModalButton.addEventListener("click", () => {
+    modalRegistration.setAttribute("hidden", true);
+});
+
+const headerMenu = document.querySelector('.header__menu');
+if (headerMenu){
+    const headerList = headerMenu.querySelector('.menu');
+    const menuData = {
+        link0:{
+            link: '/',
+            title: 'Главная',
+        },
+        link1: {
+            link: '#about',
+            title: 'О нас',
+        },
+        link2: {
+            link: '#courses',
+            title: 'Курсы',
+        },
+        link3: {
+            link: '#reviews',
+            title: 'Отзывы',
+        }
+    }
+    const createLink = (UrlLink, title) =>{
+            const link = `
+                <li class="menu__item">
+                    <a class="menu__link" href="${UrlLink}">${title}</a>
+                </li>  
+        `;
+        return link;
+    }
+    for (const linkItem in menuData) {
+        const link = menuData[linkItem];
+        const linkIndex = createLink(link.link, link.title);
+        headerList.insertAdjacentHTML('beforeend', linkIndex);
+    }
+}
+/** */
+const cardsImages = document.querySelector(".images");
+    if (cardsImages) {
+        const cardListImages = cardsImages.querySelector(".images__list");
+
+        const apiUrl = "images.json";
+
+        const createCard = (imageUrl, imageAlt, imageWidth) => {
+            // Шаблонные строки и подстановки
+            const image = `
+            <li class="images__item">
+                <img class="images__picture" src="${imageUrl[0]}" alt="${imageAlt}" width="${imageWidth}">
+                <img class="images__picture" src="${imageUrl[1]}" alt="${imageAlt}" width="${imageWidth}" style="display: none;">
+            </li>
+        `;
+
+            return image;
+        };
+        const apiUrl = "images.json";
+        
+        fetch(apiUrl)
+            .then((response) => response.json())
+            .then((images) => {
+                console.log(images); 
+                console.log(typeof images); 
+
+                images.forEach((item) => {
+                    const cardElement = createCard(
+                        item.imageUrl,
+                        item.imageAlt,
+                        item.imageWidth
+                    );
+                    cardListImages.insertAdjacentHTML("beforeend", cardElement);
+                });
+             });
+
+    }
+               

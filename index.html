@@ -15,19 +15,24 @@
                 <h1 class="header__title"> Онлайн-школа Swansong</h1>
             </a>
             <nav class="header__menu">
+                <ul class="menu"></ul>
                 <ul class="menu">
-                    <button class="menu__button-menu">Меню</button>
-                    <form class="menu__item" action="/">
-                        <img class="menu__login-image" src="imagies/login.png" alt="Картинка логина" width="75" height="75">
-                        <input class="menu__phone-number" type="tel" name="phone" placeholder="Номер телефона" required>
-                        <input class="menu__password" type="password" name="password" placeholder="Пароль" required>
-                        <button class="menu__button-enter">Войти</button>
+                               
                 </ul>
+                <form class="menu__item" action="/">
+                    <img class="menu__login-image" src="imagies/login.png" alt="Картинка логина" width="75" height="75">
+                    <input class="menu__phone-number" type="tel" name="phone" placeholder="Номер телефона">
+                    <input class="menu__password" type="password" name="password" placeholder="Пароль">
+                    <div class="header__buttons">
+                        <button class="menu__button-enter" type="button">Войти</button>
+                        <button class="menu__button-registr" type="button">Регистрация</button>
+                    </div>
+                </form>
             </nav>
         </div>
     </header>
     <main сlass="main container">
-        <section class="about">
+        <section class="about" id="about">
             <div class="about__wrap-left">
                 <h2 class="about__title">О нас</h2>
                 <p>Наша школа работает уже столько-то лет и имеет столько-то выпускниковю. Записывайтесь на уроки и овладейте английским в мастерстве!</p>
@@ -38,7 +43,7 @@
             </div>
         </section>
         <section>
-            <div class="allcourses">
+            <div class="allcourses" id="courses">
                 <h2 class="allcourses__title">Курсы иностранных языков для любого уровня</h2>
                 <a class="allcourses__allcourses" href="#" target="_blank">Все курсы</a>
             <ul class="courses">
@@ -65,7 +70,7 @@
             </ul>
             </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
             <h2 class="reviews__title section__title">Отзывы учеников</h2>
             <ul class="reviews__card">
                 <li class="reviews__item">
@@ -79,19 +84,32 @@
                     <p class="review__test">Еще ни разу не встречал столь замечательных преподавателей. Сыну даже нравится учиться, что стало для меня большой радостью!</p>
                 </li>
             </ul>
-            <div class="reviews__button">
-                <button class="reviews__left">
-                    <img src="imagies/left.svg" alt="" class="reviews__left-swiper" width="25" height="25">
-                </button>
-                <button class="reviews__right">
-                    <img src="imagies/right.svg" alt="" class="reviews__right-swiper" width="25" height="25">
-                </button>
-            </div>
-</section>
+    </section>
     </main>
-    <footer class="footer container">
-        <p class="footer__creators">Сайт создан Лебедевым Евгением (ЛВ-41), Лавровой Ксенией (АН-23)</p>
+    <footer class="footer">
+        <div class="footer__content container">
+            <p class="footer__creators">Сайт создан Лебедевым Евгением (ЛВ-41), Лавровой Ксенией (АН-23)</p>
+        </div>
     </footer>
+<div class="registrations" hidden>
+    <section class="registration">
+        <div class="registration__wrap">
+            <h3 class="registration__title">
+                Создание аккаунта
+            </h3>
+            <p class="registration__text">Введите все нужные данные</p>
+        </div>
+        <div >
+            <button class="registration__close" type="button"> x</button>
+            <form action="/" class="registration__form">
+                <input class="registration__input" type="text" placeholder="ФИО">
+                <input class="registration__input" type="pass" placeholder="Пароль">
+                <input class="registration__input" type="repass" placeholder="Повторите пароль">
+                <button class="registration__button button">Зарегистрироваться</button>
+            </form>
+        </div>
+    </section>
+</div>
 <script src="scripts/script.js"></script>
 </body>
 </html>

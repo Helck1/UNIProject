@@ -211,6 +211,7 @@ rgba(0,0,0,0.2);
   display: flex;
   gap: 40px;
   overflow: hidden;
+  justify-content: center;
 }
 
 .reviews__img {
@@ -224,9 +225,7 @@ rgba(0,0,0,0.2);
 .reviews {
   display:block;
 }
-.reviews__card {
-  justify-content: center;
-}
+
 .reviews__title {
   text-align: center;
 }

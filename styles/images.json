@@ -1,0 +1,10 @@
+[
+    {
+        "imageUrl": [
+            "imagies/description.jpg",
+            "imagies/description2.jpg"
+        ],
+        "imageAlt": "Картинка описания",
+        "imageWidth": 500
+    }
+]
