@@ -205,3 +205,36 @@ rgba(0,0,0,0.2);
 .courses__course2:hover {
  outline: 1px solid black;
 }
+.reviews__card {
+  width: 1350;
+  margin-top: 60px;
+  display: flex;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.reviews__img {
+  min-width: 200px;
+  align-items: center;
+}
+.reviews__item {
+  width: 360px;
+  transition: 0.3s ease;
+}
+.reviews {
+  display:block;
+}
+.reviews__card {
+  justify-content: center;
+}
+.reviews__title {
+  text-align: center;
+}
+.reviews__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007f7f;
+  color:#007f7f;
+  border: none;
+}
